@@ -1,0 +1,83 @@
+
+
+    <h1> Hangman Travel Edition </h1>
+
+    <p> Press any key to start the game! - Have Fun!!!</p>
+    <p id ="score"></p>
+
+    <script type ="text/javascript">
+
+// array of alphabet letters
+var alphabet = [ "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+for (var a = 0; a < alphabet.length; a++) {
+      letters.id = "alphabet";
+      list = document.createElement("li");
+      list.id = "letter";
+      list.innerHTML = alphabet[i];
+      check();
+   
+// game starts with score of 0
+var score = 0
+
+// here we define our array of words the word will be randomly chosen
+    var words = [ "paris the city of love", "viva las vegas", "disneyland or disneyworld", "rocky mountains", "road trips"];
+
+    // answer array depends on the random word JS selects
+var answerArray = [];
+
+
+
+//here we bring a  random index number down choose a random word from the array above. * .length multiplies Math.random by 5 the number of words in the array
+function words() {   
+var word = words[Math.floor(Math.random()* words.length)];
+
+
+
+
+//Stored Guess
+var showLives = document.getElementById("myLives");
+
+//here the randomly chosen word will create underscores for the individual letter of the randomly chosen word
+            for (var i=0; i < word.length; i++) {
+                answerArray [i] = "_";
+            }
+//Create variable to keep track of remaining letters to be guessed
+        var remainingLetters = word.length;
+
+//Game loop
+    
+    //guess from user
+    var guess = prompt ["Guess a letter, or click cancel to stop playing."];
+    if (guess===null) {
+        // exit game loop
+        break;
+        // if the user enters 0 or more then 1 letter alert to change entry
+    } else if (guess.length !==1) {
+        alert("Please enter a single letter.");
+        //update the game with the guess loop
+    } else {
+        for (var g =0; g < word.lenth; g++) {
+            if (word [g] === guess) {
+                answerArray[g] = guess;
+                remainingLetters--;
+
+                // Show lives // end of Game loop
+   comments = function () {
+    showLives.innerHTML = "You have " + lives + " lives";
+    if (lives < 1) {
+      showLives.innerHTML = "Game Over";
+    }
+    for (var i = 0; i < guesses.length; i++) {
+      if (counter + space === guesses.length) {
+        showLives.innerHTML = "You Win!";
+            }
+        }
+
+    }
+
+   // Reset
+
+   document.getElementById('reset').onclick = function() {
+    correct.parentNode.removeChild(correct);
+</script>

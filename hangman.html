@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <title>Hangman</title>
+</head>
+<script type ="text/javascript"></script>
+
+<body>
+
+    <h1> Hangman Travel Edition</h1>
+
+    <p> Press any key to start the game! - Have Fun!!!</p>
+
+    <input type="text" onkeydown ="myFunction()">
+
+<script>
+
+    function myFunction() {
+        alert("Choose a letter to guess the chosen word");
+    }
+
+// here we define our array of words the word will be randomly chosen
+    var words = [ "paris the city of love", "viva las vegas", "disneyland or disneyworld", "rocky mountains", "road trips"];
+//here we bring a  random index number down choose a random word from the array above. * .length multiplies Math.random by 5 the number of words in the array
+    var word = words[Math.floor(Math.random()* words.length)];
+
+// answer array depends on the random word JS selects
+var answerArray = [];
+
+//here the randomly chosen word will create underscores for the individual letter of the randomly chosen word
+            for (var i=0; i < word.length; i++) {
+                answerArray [i] = "_";
+            }
+//Create variable to keep track of remaining letters to be guessed
+        var remainingLetters = word.length;
+
+//Game loop
+while (remainingLetters > 0) {
+    // show the player their progress
+   var el = document.getElementById("demo");el.innerHTML = answerArray.join("");
+    
+    //guess from user
+    var guess = prompt ["Guess a letter, or click cancel to stop playing."];
+    if (guess===null) {
+        // exit game loop
+        break;
+        // if the user enters 0 or more then 1 letter alert to change entry
+    } else if (guess.length !==1) {
+        alert("Please enter a single letter.");
+        //update the game with the guess loop
+    } else {
+        for (var g =0; g < word.lenth; g++) {
+            if (word [g] === guess) {
+                answerArray[g] = guess;
+                remainingLetters--;
+            }
+        }
+
+    }
+// end of Game loop
+el.innerHTML = answerArray.join("");
+alert(Nicley Done! The answer was " + word +"- ")
+    </script>
+
+    
+</body>
+</html>
