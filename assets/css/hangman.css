@@ -1,0 +1,33 @@
+body {
+  background-image:url(../images/denver.jpg);
+}
+.container {
+  background-color: blue;
+  width: 400px;
+  height: 200px;
+  margin: 10px auto ;
+}
+h1 {
+  font-size: 30pt;
+  font-style: oblique;
+  font-family: fantasy;
+  text-align: center;
+}
+p {
+  font-size: 16pt;
+  font-family: fantasy;
+  text-align: center;
+}
+h2 {
+  font-size: 16pt;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+#right {
+  letter-spacing: 3px;
+  font-style: oblique;
+}
+.winsAndLosses {
+  background-color: blue;
+  
+}
